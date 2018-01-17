@@ -41,3 +41,6 @@ IMAGE_INSTALL_append = " usb-modeswitch usb-modeswitch-data"
 IMAGE_INSTALL_append = " ppp ppp-oe"
 IMAGE_INSTALL_append = " ofono ofono-tests"
 IMAGE_INSTALL_append = " connman connman-tools connman-tests connman-client"
+
+# The following is needed for correct EFI deployment
+do_image_wic[depends] += "${PN}:do_bootimg"
