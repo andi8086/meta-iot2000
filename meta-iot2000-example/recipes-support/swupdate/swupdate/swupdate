@@ -16,7 +16,7 @@ if [ -z "$HAWKBITURL" ]; then
 fi
 
 if [ -z "$DEVICENAME" ]; then
-    DEVICENAME='SIMATIC IOT2040'
+    DEVICENAME='SIMATIC-IOT2040'
 fi
 
 case "$1" in
