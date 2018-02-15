@@ -6,6 +6,13 @@ CONFIGFILE=/etc/hawkbit.cfg
 
 . /etc/init.d/functions
 
+# -- HACK --
+# there seems to be a bug so that syslog cannot be automatically
+# enabled in SystemVinit
+killall syslogd | true
+/etc/init.d/syslog start
+# ----------
+
 if [ -e "$CONFIGFILE" ]; then
     HAWKBITURL=`grep url $CONFIGFILE | sed -e 's/url=//g'` 
     DEVICENAME=`grep devname $CONFIGFILE | sed -e 's/devname=//g'` 

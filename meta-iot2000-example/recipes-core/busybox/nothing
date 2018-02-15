@@ -1,0 +1,4 @@
+do_install_append() {
+   install -d ${D}${sysconfdir}/rcS.d
+   ln -s ../init.d/syslog ${D}${sysconfdir}/rcS.d/S02syslog
+}
