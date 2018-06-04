@@ -9,6 +9,8 @@ SRC_URI += "file://swupdate.cfg"
 
 FILES_${PN} += "/etc/swupdate.cfg /usr/bin/progress_firmware"
 
+DEPENDS += "efibootguard"
+
 do_configure_prepend () {
   cp ${WORKDIR}/swupdate_handlers.lua ${S}
   cp ${WORKDIR}/Makefile ${S}/tools/Makefile
