@@ -10,5 +10,5 @@ part --source efibootguard-boot --size 32 --extra-space 0 --overhead-factor 1 --
 part swap --ondisk mmcblk0 --size 512 --fstype=swap --label swap --align 1024
 part --size 1024 --extra-space 0 --overhead-factor 1 --ondisk mmcblk0 --label persistent --align 1024 --fstype=ext4
 
-bootloader --ptable gpt --append="console=ttyS1,115200n8 earlyprintk"
+bootloader --ptable gpt --append="console=ttyS1,115200n8 earlyprintk initrd=acpi-upgrades-iot2000.cpio"
 
