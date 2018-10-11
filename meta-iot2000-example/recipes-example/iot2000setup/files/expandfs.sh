@@ -30,7 +30,8 @@ case $(mount | grep "on / ") in
 esac
 
 log "Fixing backup GPT position"
-parted ${ROOT_DEVICE} print Fix
+# The following command is correct! (and the only way to automatically fix)
+parted ${ROOT_DEVICE} print Fix > /dev/null
 
 LAST_PART="$(parted ${ROOT_DEVICE} -ms unit s p | tail -n 1 | cut -d ':' -f 1)"
 if [ "x${LAST_PART}" == "x" ]
